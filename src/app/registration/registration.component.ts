@@ -1,21 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators,Validator,FormControl,FormGroup,NgForm, FormGroupDirective,FormGroupName ,ValidatorFn} from '@angular/forms';
 import {AbstractControl} from '@angular/forms';
 import { group } from '@angular/animations';
-
-
-
-
-
-
-
-
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+
+
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class AppComponent {
+export class RegistrationComponent implements OnInit {
+
   title = 'Validation';
   ValidateForm
 
@@ -87,8 +82,7 @@ export class AppComponent {
     
       }
 
-
-      
+  ngOnInit() {
+  }
 
 }
-

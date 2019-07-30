@@ -1,0 +1,44 @@
+<p>registration works!</p>
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>
+      </h1>
+      <form [formGroup] ="ValidateForm">
+      <p>
+          <mat-form-field class="full-width">
+              <input matInput type="email" placeholder="Email" formControlName="email" required>
+                  <mat-error *ngFor="let validation of Error_messages.email">
+                  <mat-error class="error-message" *ngIf="ValidateForm.get('email').hasError(validation.type)">{{validation.message}}</mat-error>
+                 
+                </mat-error>
+            </mat-form-field>
+          <span id="pcol" *ngIf = "email" > Required</span> <br><br >
+        </p>
+    
+            <p>
+                <mat-form-field class="full-width">
+                    <input matInput type="password" placeholder="Password" formControlName="password" required>
+                        <mat-error *ngFor="let validation of Error_messages.password">
+                        <mat-error class="error-message" *ngIf="ValidateForm.get('password').hasError(validation.type) ">{{validation.message}}</mat-error>
+                      </mat-error>
+                  </mat-form-field>
+              </p>
+    
+              <p>
+                  <mat-form-field class="full-width">
+                      <input matInput type="password" placeholder="Confirm Password" formControlName="confirm_password"   required>
+                          <mat-error *ngFor="let validation of Error_messages.confirm_password">
+    
+                          <mat-error class="error-message" *ngIf="ValidateForm.get('confirm_password').hasError(validation.type) ">{{validation.message}}</mat-error>                        
+                            </mat-error>
+                    </mat-form-field>
+                </p>
+    
+    <br><br>
+            <div class="example-button-row">
+    
+                <button  mat-flat-button color="warn" [disabled]="!ValidateForm.valid">Save</button>            
+              </div>
+          </form>
+        
+    <router-outlet></router-outlet>
+    
